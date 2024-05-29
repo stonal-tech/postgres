@@ -9,7 +9,6 @@ jobs:
       matrix:
         type: [""]
     env:
-        DOCKERHUB_USERNAME: stonal
         DOCKERHUB_IMAGE: postgres
         REGISTRY_IMAGE: stonal/postgres
     runs-on: stonal-ubuntu-22.04
@@ -46,7 +45,7 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v3
       with:
-        username: ${{ github.repository_owner }}
+        username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v3
