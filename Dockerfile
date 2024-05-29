@@ -1,6 +1,7 @@
 # Use the PostGIS image as the base
 FROM postgis/postgis:13-3.4
 
+# https://github.com/pgvector/pgvector/tags
 ARG PGVECTOR_VERSION=v0.5.1
 
 # Install necessary packages
