@@ -1,5 +1,7 @@
 FROM postgres:16.3-alpine3.20
 
+# This is a copy-paste from the official PostGIS Dockerfile. Only because they don't do multiarch.
+
 # https://github.com/postgis/postgis/tags
 ENV POSTGIS_VERSION 3.4.2
 
@@ -113,3 +115,4 @@ RUN set -eux \
 
 COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/10_postgis.sh
 COPY ./update-postgis.sh /usr/local/bin
+
