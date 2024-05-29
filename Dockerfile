@@ -1,5 +1,5 @@
 # Use the PostGIS image as the base
-FROM postgis/postgis:14.0
+FROM postgis/postgis:13-3.4
 
 ARG PGVECTOR_VERSION=v0.5.1
 
