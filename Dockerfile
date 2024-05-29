@@ -2,7 +2,7 @@
 FROM postgis/postgis:13-3.4
 
 # https://github.com/pgvector/pgvector/tags
-ARG PGVECTOR_VERSION=v0.5.1
+ARG PGVECTOR_VERSION=v0.7.0
 
 # Install necessary packages
 RUN apt-get update \
