@@ -1,5 +1,5 @@
 # Use the PostGIS image as the base
-FROM postgis/postgis:16-3.4
+FROM public.ecr.aws/docker/postgis/postgis:16-3.4
 
 # https://github.com/pgvector/pgvector/tags
 ARG PGVECTOR_VERSION=v0.7.0
