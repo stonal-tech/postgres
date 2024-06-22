@@ -1,5 +1,10 @@
 name: Push to Docker Hub
 
+# Note: This is workflow doesn't respect the standard workflows because we want
+# - to push to Docker Hub and GitHub Container Registry (instead of ECR)
+# - to create multi-arch build
+# - to avoid pushing all builds
+
 on:
   push:
 
@@ -53,7 +58,7 @@ jobs:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Build and push (scratch)
+    - name: Build and push
       uses: docker/build-push-action@v5
       with:
         context: .

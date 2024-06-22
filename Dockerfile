@@ -1,13 +1,11 @@
 # see https://github.com/postgis/docker-postgis/blob/master/Dockerfile.template
 FROM postgres:16.3
 
-# ENV PG_MAJOR 16
-# ENV POSTGIS_MAJOR 3
 # https://github.com/postgis/postgis/tags
 ENV POSTGIS_VERSION 3.4.2
 
 # https://github.com/pgvector/pgvector/tags
-ENV PGVECTOR_V_VERSION v0.7.0
+ENV PGVECTOR_V_VERSION v0.7.1
 
 # Remove the first v letter
 RUN set -ex && \
