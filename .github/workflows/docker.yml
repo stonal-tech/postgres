@@ -18,7 +18,7 @@ jobs:
         REGISTRY_IMAGE: stonal/postgres
     runs-on: stonal-ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4.1.6
+    - uses: actions/checkout@v4.1.7
     - name: Docker meta
       id: docker_meta
       uses: docker/metadata-action@v5
