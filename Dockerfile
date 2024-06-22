@@ -5,7 +5,7 @@ FROM postgres:16.3
 ENV POSTGIS_VERSION 3.4.2
 
 # https://github.com/pgvector/pgvector/tags
-ENV PGVECTOR_V_VERSION v0.7.1
+ENV PGVECTOR_V_VERSION v0.7.2
 
 # Remove the first v letter
 RUN set -ex && \
