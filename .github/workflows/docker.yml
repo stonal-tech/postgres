@@ -9,7 +9,7 @@ on:
   push:
 
 jobs:
-  build:
+  ci:
     strategy:
       matrix:
         type: [""]
@@ -18,7 +18,7 @@ jobs:
         REGISTRY_IMAGE: stonal/postgres
     runs-on: stonal-ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4.1.6
+    - uses: actions/checkout@v4.1.7
     - name: Docker meta
       id: docker_meta
       uses: docker/metadata-action@v5
@@ -59,11 +59,11 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build and push
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         file: ./Dockerfile${{ matrix.type != '' && format('.{0}', matrix.type) || '' }}
-        platforms: linux/amd64 #,linux/arm64,linux/arm/v6,linux/arm/v7
+        platforms: linux/amd64,linux/arm64/v8 #,linux/arm64,linux/arm/v6,linux/arm/v7
         push: true
         tags: ${{ steps.docker_meta.outputs.tags }}
         labels: ${{ steps.docker_meta.outputs.labels }}
